@@ -1,6 +1,6 @@
 import React from 'react'
 import { UserOutlined } from '@ant-design/icons';
-import { Avatar, Space } from 'antd';
+import { Avatar } from 'antd';
 
 const AvatarComponent = ({ submit }) => {
     return (

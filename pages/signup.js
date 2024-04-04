@@ -1,59 +1,93 @@
-import FormContentComponent from '@/components/FormContentComponent'
-import MainContent from '@/components/layout/MainContent'
-import React from 'react'
+import React from 'react';
+import { Form, Input, Select, Button } from 'antd';
+import MainContent from '../components/layout/MainContent';
+import FormContentComponent from '@/components/FormContentComponent';
+
+const { Option } = Select;
 
 const Signup = () => {
 
-    const handleSubmit = () => {
-        alert('submited')
-    }
+    const [form] = Form.useForm();
+
+    const handleSubmit = (values) => {
+        console.log('Received values:', values);
+    };
+
     return (
-        <>
-            <MainContent>
+        <MainContent>
             <FormContentComponent
                 title={'Sign Up'}
                 onSubmit={handleSubmit}
             >
-                <input
-                    className="input_form"
-                    name="name"
-                    placeholder='name'
-                    type='text'
-                />
-                <input
-                    className="input_form"
-                    name="phone"
-                    placeholder='phone'
-                    type='text'
-                />
-                <input
-                    className="input_form"
-                    name="city"
-                    placeholder='city'
-                    type='text'
-                />
-                <input
-                    className="input_form"
-                    name="email"
-                    placeholder='email'
-                    type='email'
-                />
-                <input
-                    className="input_form"
-                    name="password"
-                    placeholder='password'
-                    type='password'
-                />
-                <select className="input_form" name="role">
-                    <option value="student">Student</option>
-                    <option value="teacher">Teacher</option>
-                </select>
+                <Form
+                    style={{ width: '95%' }}
+                    form={form}
+                    onFinish={handleSubmit}
+                    layout="vertical"
+                >
+                    <Form.Item
+                        label="Name"
+                        name="name"
+                        rules={[{ required: true, message: 'Please input your name!' }]}
+                    >
+                        <Input />
+                    </Form.Item>
 
-                </FormContentComponent>
-            </MainContent>
-        </>
-    )
-}
+                    <Form.Item
+                        label="Phone"
+                        name="phone"
+                        rules={[{ required: true, message: 'Please input your phone number!' }]}
+                    >
+                        <Input />
+                    </Form.Item>
 
-export default Signup
+                    <Form.Item
+                        label="City"
+                        name="city"
+                        rules={[{ required: true, message: 'Please input your city!' }]}
+                    >
+                        <Input />
+                    </Form.Item>
 
+                    <Form.Item
+                        label="Email"
+                        name="email"
+                        rules={[
+                            { required: true, message: 'Please input your email!' },
+                            { type: 'email', message: 'Please input a valid email address!' }
+                        ]}
+                    >
+                        <Input />
+                    </Form.Item>
+
+                    <Form.Item
+                        label="Password"
+                        name="password"
+                        rules={[{ required: true, message: 'Please input your password!' }]}
+                    >
+                        <Input.Password />
+                    </Form.Item>
+
+                    <Form.Item
+                        label="Role"
+                        name="role"
+                        rules={[{ required: true, message: 'Please select your role!' }]}
+                    >
+                        <Select>
+                            <Option value="student">Student</Option>
+                            <Option value="teacher">Teacher</Option>
+                        </Select>
+                    </Form.Item>
+
+                    <Form.Item>
+                        <Button className='btn' type="primary" htmlType="submit">
+                            Submit
+                        </Button>
+                    </Form.Item>
+                </Form>
+            </FormContentComponent>
+        </MainContent>
+    );
+};
+
+export default Signup;

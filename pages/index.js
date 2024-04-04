@@ -1,4 +1,4 @@
-import MainContent from '@/components/layout/MainContent';
+import MainContent from '../components/layout/MainContent';
 import React from 'react';
 
 const Home = () => {

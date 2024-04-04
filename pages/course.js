@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { DatePicker } from 'antd';
 import moment from 'moment';
-import MainContent from '@/components/layout/MainContent';
+import MainContent from '../components/layout/MainContent';;
 import FormContentComponent from '@/components/FormContentComponent';
 
 const Profile = () => {
@@ -52,16 +52,16 @@ const Profile = () => {
                 />
 
                 <select
-                    className="input_form"
                     name="course"
+                    className="input_form"
                     onChange={(e) => handleCourseSelection(e.target.value)}
                 >
-                    <option value="">Select a course</option>
-                    <option value="web_development" >Web Development Fundamentals - 5 months</option>
-                    <option value="data_science" >Introduction to Data Science with Python - 4 months</option>
-                    <option value="cyber_security" >Cyber Security Essentials - 3 months</option>
-                    <option value="cloud_computing" >Cloud Computing Basics - 6 months</option>
-                    <option value="mobile_app" >Building Mobile Applications with React Native - 5 months</option>
+                    <option style={{ padding: 15 }} value="">Select a course</option>
+                    <option style={{ padding: 15 }} value="web_development" >Web Development Fundamentals - 5 months</option>
+                    <option style={{ padding: 15 }} value="data_science" >Introduction to Data Science with Python - 4 months</option>
+                    <option style={{ padding: 15 }} value="cyber_security" >Cyber Security Essentials - 3 months</option>
+                    <option style={{ padding: 15 }} value="cloud_computing" >Cloud Computing Basics - 6 months</option>
+                    <option style={{ padding: 15 }} value="mobile_app" >Building Mobile Applications with React Native - 5 months</option>
 
                 </select>
 

@@ -1,61 +1,56 @@
-import FormContentComponent from '@/components/FormContentComponent'
-import MainContent from '@/components/layout/MainContent'
-import React, { useState } from 'react'
-import axios from 'axios'
-
+import React from 'react';
+import { Form, Input, Button } from 'antd';
+import MainContent from '../components/layout/MainContent';
+import FormContentComponent from '@/components/FormContentComponent';
 
 const Signin = () => {
 
+    const [form] = Form.useForm();
 
-    const [formData, setFormData] = useState({})
-
-
-    const handleSubmit = async () => {
-        const respuesta = await axios.post('url_q_da_el_back', formData)
-
-        if (respuesta.status === 200) {
-            alert('Usuario logueado')
-            // redirigir a la pagina de inicio
-        } else {
-            alert('Usuario no logueado')
-            alert(respuesta.message)
-            
-        }
-    }
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value })
-    }
+    const handleSubmit = (values) => {
+        console.log('Received values:', values);
+        // Aquí puedes realizar cualquier acción necesaria con los valores del formulario, como enviarlos a tu backend.
+    };
 
     return (
-        <>
-            <MainContent>
-                <FormContentComponent
-                    title={'Sign in'}
-                    onSubmit={handleSubmit}
+        <MainContent>
+            <FormContentComponent
+                title={'Sign in'}
+                onSubmit={handleSubmit}
+            >
+                <Form
+                    form={form}
+                    onFinish={handleSubmit}
+                    layout="vertical"
                 >
-
-                    <input
-                        className="input_form"
+                    <Form.Item
+                        label="Email"
                         name="email"
-                        placeholder='email'
-                        type='email'
-                        onChange={handleChange}
-                    />
+                        rules={[
+                            { required: true, message: 'Please input your email!' },
+                            { type: 'email', message: 'Please input a valid email address!' }
+                        ]}
+                    >
+                        <Input />
+                    </Form.Item>
 
-                    <input
-                        className="input_form"
+                    <Form.Item
+                        label="Password"
                         name="password"
-                        placeholder='password'
-                        type='password'
-                        onChange={handleChange}
-                    />
+                        rules={[{ required: true, message: 'Please input your password!' }]}
+                    >
+                        <Input.Password />
+                    </Form.Item>
 
-                </FormContentComponent>
-            </MainContent >
-        </>
-    )
-}
+                    <Form.Item>
+                        <Button className='btn' type="primary" htmlType="submit">
+                            Sign in
+                        </Button>
+                    </Form.Item>
+                </Form>
+            </FormContentComponent>
+        </MainContent>
+    );
+};
 
-export default Signin
-
+export default Signin;

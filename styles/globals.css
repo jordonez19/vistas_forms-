@@ -6,27 +6,27 @@
 }
 
 body {
-  background-color: #dee0ee;
-  padding: 45px;
+  background-color: #cad7ff;
+  padding: 15px;
 }
 
 .flex-form {
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: auto;
   text-align: start;
   padding: 20px;
-  background-color: #fff;
   width: 400px;
   margin: 45px auto 20px;
   border-radius: 15px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.346);
 }
 
 .input_form {
   border: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   padding: 10px;
   margin: 10px;
   border-radius: 5px;

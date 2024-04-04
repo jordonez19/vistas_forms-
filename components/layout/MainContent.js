@@ -2,31 +2,25 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import { ConfigProvider } from 'antd';
 
 const MainContent = ({ children }) => {
     return (
         <>
-            {/*             <ConfigProvider
+            <ConfigProvider
                 theme={{
                     token: {
                         colorPrimary: '#111',
                     },
                 }}
             >
- */}
+                <Header />
+                <div style={{ minHeight: '70vh' }}>
+                    {children}
+                </div>
+                <Footer />
 
-            <Header />
-            <div style={{ minHeight: '70vh' }}>
-                {children}
-            </div>
-            <Footer />
-
-
-
-            {/* 
-
-            </ConfigProvider> */}
-
+            </ConfigProvider>
         </>
     );
 };

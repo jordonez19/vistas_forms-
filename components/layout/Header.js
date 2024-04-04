@@ -1,7 +1,7 @@
 import React from 'react';
-import { Layout, Menu } from 'antd';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Layout, Menu } from 'antd';
 
 const { Header } = Layout;
 
@@ -12,9 +12,11 @@ const CustomHeader = () => {
     const currentPath = router.pathname;
 
     return (
-        <Header style={{ borderRadius: 10, background: '#fff', padding: '5px 5px 0 ', height: 'auto' }}>
+        <Header style={{
+            borderRadius: 10, background: '#fff', padding: '5px 5px 0 ', height: 'auto', boxShadow: ' 0 0 25px rgba(0, 0, 0, 0.346)'
+        }}>
             <div className="logo" />
-            <Menu theme="light" mode="horizontal" selectedKeys={[currentPath]}>
+            <Menu theme="light" mode="horizontal" style={{ textTransform: 'uppercase', fontWeight: 600 }} selectedKeys={[currentPath]}>
                 <Menu.Item key="/">
                     <Link href="/" passHref>
                         home
@@ -43,6 +45,11 @@ const CustomHeader = () => {
                 <Menu.Item key="/course">
                     <Link href="/course" passHref>
                         course
+                    </Link>
+                </Menu.Item>
+                <Menu.Item key="/profile">
+                    <Link href="/profile" passHref>
+                        profile
                     </Link>
                 </Menu.Item>
             </Menu>
