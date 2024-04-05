@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Form, DatePicker, Input, Select, Button } from 'antd';
 import moment from 'moment';
 import MainContent from '../components/layout/MainContent';
-import FormContentComponent from '@/components/FormContentComponent';
+import FormContentComponent from '../components/FormContentComponent';
 
 const { Option } = Select;
 

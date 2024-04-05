@@ -2,8 +2,8 @@ import React from 'react';
 import { Form, Input, Button, Upload, message, Row, Col } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import MainContent from '../components/layout/MainContent';
-import FormContentComponent from '@/components/FormContentComponent';
 import { useAlert } from './useAlert';
+import FormContentComponent from '../components/FormContentComponent';
 
 const TechnicalSupportForm = () => {
   const [form] = Form.useForm();

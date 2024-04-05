@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Input, Select, Button } from 'antd';
 import MainContent from '../components/layout/MainContent';
-import FormContentComponent from '@/components/FormContentComponent';
+import FormContentComponent from '../components/FormContentComponent';
 
 const { Option } = Select;
 
