@@ -1,5 +1,5 @@
+import FormContentComponent from '../components/FormContentComponent';
 import MainContent from '../components/layout/MainContent';;
-import FormContentComponent from '@/components/FormContentComponent';
 import { Form, Input, Select, Button } from 'antd';
 
 const Students = () => {

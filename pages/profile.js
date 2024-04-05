@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
-import AvatarComponent from '@/components/AvatarComponent';
-import FormContentComponent from '@/components/FormContentComponent';
-import MainContent from '@/components/layout/MainContent';
+import MainContent from '../components/layout/MainContent';
+import FormContentComponent from '../components/FormContentComponent';
+import AvatarComponent from '../components/AvatarComponent';
 
 const Profile = () => {
     const [form] = Form.useForm();

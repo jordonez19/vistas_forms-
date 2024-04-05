@@ -1,7 +1,7 @@
 import MainContent from '../components/layout/MainContent';;
-import FormContentComponent from '@/components/FormContentComponent';
 import { Form, Input, Select, Button } from 'antd';
 import { useAlert } from './useAlert';
+import FormContentComponent from '../components/FormContentComponent';
 const Teacherss = () => {
 
     const { Option } = Select;

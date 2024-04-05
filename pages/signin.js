@@ -1,8 +1,8 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
 import MainContent from '../components/layout/MainContent';
-import FormContentComponent from '@/components/FormContentComponent';
 import { useAlert } from './useAlert';
+import FormContentComponent from '../components/FormContentComponent';
 
 const Signin = () => {
 
