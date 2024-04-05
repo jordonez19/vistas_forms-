@@ -1,19 +1,19 @@
 import MainContent from '../components/layout/MainContent';;
 import FormContentComponent from '@/components/FormContentComponent';
 import { Form, Input, Select, Button } from 'antd';
-
+import { useAlert } from './useAlert';
 const Teacherss = () => {
 
     const { Option } = Select;
     const [form] = Form.useForm();
     const FormItem = Form.Item;
 
-    const handleSubmit = () => {
-        alert('submitted teachers');
-    };
+    const { handleSuccessAlert } = useAlert();
 
     const onFinish = (values) => {
         onSubmit(values);
+        handleSuccessAlert('Submitted teachers');
+
     };
 
     const onFinishFailed = (errorInfo) => {
@@ -33,7 +33,6 @@ const Teacherss = () => {
 
             <FormContentComponent
                 title={'New Teacher'}
-                onSubmit={handleSubmit}
             >
                 <Form
                     style={{ width: '95%' }}

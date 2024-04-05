@@ -1,91 +1,110 @@
 import React, { useState } from 'react';
-import { Form, DatePicker, Input, Select, Button } from 'antd';
-import moment from 'moment';
-import MainContent from '../components/layout/MainContent';
+import { Form, Input, Button, Checkbox } from 'antd';
+import AvatarComponent from '@/components/AvatarComponent';
 import FormContentComponent from '@/components/FormContentComponent';
-
-const { Option } = Select;
+import MainContent from '@/components/layout/MainContent';
 
 const Profile = () => {
     const [form] = Form.useForm();
-    const [startDateDisabled, setStartDateDisabled] = useState(true);
-    const [selectedCourse, setSelectedCourse] = useState('');
-    const [startDate, setStartDate] = useState(null);
+    const [open, setOpen] = useState(false);
+
+    const handleSubmitPhoto = () => {
+        alert('Submitted update photo profile');
+    };
 
     const handleSubmit = (values) => {
-        console.log('Submitted new course:', values);
+        console.log('Submitted update profile:', values);
         // Aquí puedes realizar cualquier acción necesaria con los valores del formulario, como enviarlos a tu backend.
-    };
-
-    const handleCourseSelection = (value) => {
-        setSelectedCourse(value);
-        setStartDateDisabled(false);
-        setStartDate(generateRandomDate(value));
-    };
-
-    const generateRandomDate = (course) => {
-        const startDateMap = {
-            web_development: moment(new Date(2024, 2, 25)),
-            data_science: moment(new Date(2024, 3, 30)),
-            cyber_security: moment(new Date(2024, 4, 15)),
-            cloud_computing: moment(new Date(2024, 5, 10)),
-            mobile_app: moment(new Date(2024, 6, 5))
-        };
-
-        return startDateMap[course];
     };
 
     return (
         <MainContent>
             <FormContentComponent
-                title={'New Course'}
+                title={'Profile'}
                 onSubmit={handleSubmit}
             >
-                <Form form={form} onFinish={handleSubmit} layout='vertical' style={{ width: '100%' }}>
+                <AvatarComponent submit={handleSubmitPhoto} />
+
+                <Form
+                    form={form}
+                    onFinish={handleSubmit}
+                    layout="vertical"
+                    style={{ width: '100%' }}
+                >
                     <Form.Item
-                        name="course"
-                        label="Course"
-                        rules={[{ required: true, message: 'Please select a course!' }]}
+                        label="Email"
+                        name="email"
+                        rules={[
+                            { required: true, message: 'Please input your email!' },
+                            { type: 'email', message: 'Please enter a valid email address!' },
+                        ]}
                     >
-                        <Select
-                            placeholder="Select a course"
-                            onChange={handleCourseSelection}
+                        <Input placeholder="Email" type="email" />
+                    </Form.Item>
+                    {open && (
+                        <Form.Item
+                            label="Password"
+                            name="password"
+                            rules={[
+                                { required: true, message: 'Please input your password!' },
+                                { min: 6, message: 'Password must be at least 6 characters long!' },
+                            ]}
                         >
-                            <Option value="web_development">Web Development Fundamentals - 5 months</Option>
-                            <Option value="data_science">Introduction to Data Science with Python - 4 months</Option>
-                            <Option value="cyber_security">Cyber Security Essentials - 3 months</Option>
-                            <Option value="cloud_computing">Cloud Computing Basics - 6 months</Option>
-                            <Option value="mobile_app">Building Mobile Applications with React Native - 5 months</Option>
-                        </Select>
+                            <Input.Password placeholder="Password" />
+
+                        </Form.Item>
+                    )}
+                    <Form.Item>
+                        <Button className='custom_btn' onClick={() => setOpen(!open)}>
+                            {open ? "Unchange Password" : "Change Password"}
+                        </Button>
                     </Form.Item>
 
                     <Form.Item
-                        name="title"
-                        label="Title"
-                        rules={[{ required: true, message: 'Please input the title!' }]}
+                        label="Name"
+                        name="name"
+                        rules={[{ required: true, message: 'Please input your name!' }]}
                     >
-                        <Input placeholder='Title' />
+                        <Input placeholder="Name" />
                     </Form.Item>
 
                     <Form.Item
-                        name="instructor"
-                        label="Instructor"
-                        rules={[{ required: true, message: 'Please input the instructor!' }]}
+                        label="Phone"
+                        name="phone"
+                        rules={[{ required: true, message: 'Please input your phone number!' }]}
                     >
-                        <Input placeholder='Instructor' />
+                        <Input placeholder="Phone" />
                     </Form.Item>
 
                     <Form.Item
-                        name="start_date"
-                        label="Start Date"
-                        rules={[{ required: true, message: 'Please select the start date!' }]}
+                        label="Address"
+                        name="address"
+                        rules={[{ required: true, message: 'Please input your address!' }]}
                     >
-                        <DatePicker
-                            style={{ width: '100%' }}
-                            placeholder='Start Date'
-                            disabled={startDateDisabled}
-                            value={startDate}
-                        />
+                        <Input placeholder="Address" />
+                    </Form.Item>
+
+                    <Form.Item
+                        label="City"
+                        name="city"
+                        rules={[{ required: true, message: 'Please input your city!' }]}
+                    >
+                        <Input placeholder="City" />
+                    </Form.Item>
+
+                    <Form.Item
+                        label="Country"
+                        name="country"
+                        rules={[{ required: true, message: 'Please input your country!' }]}
+                    >
+                        <Input placeholder="Country" />
+                    </Form.Item>
+
+                    <Form.Item
+                        label="Description"
+                        name="description"
+                    >
+                        <Input.TextArea placeholder="Description" rows={5} />
                     </Form.Item>
 
                     <Form.Item>
@@ -95,7 +114,7 @@ const Profile = () => {
                     </Form.Item>
                 </Form>
             </FormContentComponent>
-        </MainContent>
+        </MainContent >
     );
 };
 

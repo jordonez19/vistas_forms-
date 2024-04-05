@@ -2,15 +2,21 @@ import React from 'react';
 import { Form, Input, Button } from 'antd';
 import MainContent from '../components/layout/MainContent';
 import FormContentComponent from '@/components/FormContentComponent';
+import { useAlert } from './useAlert';
 
 const Signin = () => {
 
     const [form] = Form.useForm();
+    const { handleSuccessAlert, handleErrorAlert, handleEditConfirmation, handleAcceptConfirmation } = useAlert();
 
     const handleSubmit = (values) => {
+        handleSuccessAlert('Submitted Sign in');
+        //handleErrorAlert('Submitted Sign in');
+        //handleEditConfirmation('Submitted Sign in');
+        //handleAcceptConfirmation('Submitted Sign in');
         console.log('Received values:', values);
-        // Aquí puedes realizar cualquier acción necesaria con los valores del formulario, como enviarlos a tu backend.
     };
+
 
     return (
         <MainContent>

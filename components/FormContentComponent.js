@@ -3,8 +3,8 @@ import React from 'react'
 const FormContentComponent = ({ children, title }) => {
     return (
         <>
-            <div className='flex-form'>
-                <h1 className='text-center'>{title}</h1><br />
+            <div className='flex-form zoomIn'>
+                <h3 className='text-center text-uppercase'>{title}</h3><br />
 
                 {children}
 

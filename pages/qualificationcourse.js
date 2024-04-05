@@ -88,10 +88,11 @@ const QualificationCourse = () => {
               <Option value="5"> Excellent</Option>
             </Select>
           </Form.Item>
-
-          <button className='custom_btn' htmlType="submit">
-            Submit
-          </button>
+          <div className='text-center'>
+            <button className='custom_btn mx-auto ' htmlType="submit">
+              Submit
+            </button>
+          </div>
         </Form>
       </div>
     </MainContent>
