@@ -21,7 +21,8 @@ const Signin = () => {
                 <Form
                     form={form}
                     onFinish={handleSubmit}
-                    layout="vertical"
+                    layout="vertical" style={{ width: '95%' }}
+
                 >
                     <Form.Item
                         label="Email"
@@ -43,7 +44,7 @@ const Signin = () => {
                     </Form.Item>
 
                     <Form.Item>
-                        <Button className='btn' type="primary" htmlType="submit">
+                        <Button className='custom_btn' type="primary" htmlType="submit">
                             Sign in
                         </Button>
                     </Form.Item>

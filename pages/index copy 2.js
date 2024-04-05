@@ -17,3 +17,25 @@ const Home = () => {
 
 export default Home;
 
+/* 
+Course Evaluation Form Parameters:
+
+Course structure assessment
+Material quality evaluation
+Clarity of instructions
+Instructor feedback
+Educational Content Creation Form Parameters:
+
+Title
+Description
+Reading materials
+Videos
+Assignments
+Quizzes
+Other learning resources
+Technical Support Form Parameters:
+
+Problem description
+Screenshots (if needed)
+Contact information
+*/

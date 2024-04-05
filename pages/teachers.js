@@ -1,7 +1,4 @@
-// Teacherss.js
-import TeachersContainer from '../containers/TeachersContainer';
 import MainContent from '../components/layout/MainContent';;
-// TeachersContainer.js
 import FormContentComponent from '@/components/FormContentComponent';
 import { Form, Input, Select, Button } from 'antd';
 
@@ -133,7 +130,7 @@ const Teacherss = () => {
                     </Form.Item>
 
                     <Form.Item>
-                        <Button className='btn' type="primary" htmlType="submit">
+                        <Button className='custom_btn' type="primary" htmlType="submit">
                             Submit
                         </Button>
                     </Form.Item>

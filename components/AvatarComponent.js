@@ -6,7 +6,7 @@ const AvatarComponent = ({ submit }) => {
     return (
         <div className='text-center'>
             <Avatar size={84} icon={<UserOutlined />} />
-            <button className='btn' onClick={submit}>Upload</button>
+            <button className='custom_btn' onClick={submit}>Upload</button>
         </div>
     )
 }

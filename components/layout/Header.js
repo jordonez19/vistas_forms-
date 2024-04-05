@@ -13,7 +13,11 @@ const CustomHeader = () => {
 
     return (
         <Header style={{
-            borderRadius: 10, background: '#fff', padding: '5px 5px 0 ', height: 'auto', boxShadow: ' 0 0 25px rgba(0, 0, 0, 0.346)'
+            borderRadius: 10,
+            background: '#fff',
+            padding: '5px 5px 0 ',
+            height: 'auto',
+            boxShadow: ' 0 0 3px rgba(0, 0, 0, 0.346)'
         }}>
             <div className="logo" />
             <Menu theme="light" mode="horizontal" style={{ textTransform: 'uppercase', fontWeight: 600 }} selectedKeys={[currentPath]}>

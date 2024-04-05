@@ -112,7 +112,7 @@ const Students = () => {
                     </Form.Item>
 
                     <Form.Item>
-                        <Button className='btn' type="primary" htmlType="submit">
+                        <Button className='custom_btn' type="primary" htmlType="submit">
                             Submit
                         </Button>
                     </Form.Item>
